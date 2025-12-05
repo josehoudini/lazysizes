@@ -90,7 +90,10 @@ For background images, use data-bg attribute:
 				if (target.getAttribute('data-autoplay') != null) {
 					if (target.getAttribute('data-expand') && !target.autoplay) {
 						try {
-							target.play();
+							target.load();
+							target.addEventListener('canplay, () => {
+								target.play();
+							})
 						} catch (er) {}
 					} else {
 						requestAnimationFrame(function () {
