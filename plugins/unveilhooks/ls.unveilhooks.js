@@ -91,7 +91,7 @@ For background images, use data-bg attribute:
 					if (target.getAttribute('data-expand') && !target.autoplay) {
 						try {
 							target.load();
-							target.addEventListener('canplay, () => {
+							target.addEventListener('canplay', () => {
 								target.play();
 							})
 						} catch (er) {}
